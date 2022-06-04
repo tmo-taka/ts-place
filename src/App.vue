@@ -1,7 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png">
-    <View msg="Welcome to Your Vue.js + TypeScript App"/>
+    <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
     <div>あああ</div>
   </div>
 </template>
@@ -9,11 +9,21 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import View from './components/View.vue';
+import { define } from '@/types/define';
 
 export default defineComponent({
   // 型推論が有効になります
   components: {
     View
+  },
+  data(){
+    return {
+        obj: {
+          test: "これはテスト",
+          flag: true,
+          judge: '02',
+        } as define
+    };
   }
 })
 </script>

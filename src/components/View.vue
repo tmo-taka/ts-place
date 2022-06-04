@@ -1,16 +1,19 @@
 <template>
   <div>{{msg}}</div>
+  <div>{{obj.test}}</div>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType  } from 'vue';
+import { define } from '@/types/define';
 
 export default defineComponent({
   // 型推論が有効になります
   props: {
     msg: {
       type: String,
-    }
+    },
+    obj : Object as PropType<define>
   }
 })
 </script>
