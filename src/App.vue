@@ -1,18 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div>
+    <img alt="Vue logo" src="./assets/logo.png">
+    <View msg="Welcome to Your Vue.js + TypeScript App"/>
+    <div>あああ</div>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import View from './components/View.vue';
 
 export default defineComponent({
-  name: 'App',
+  // 型推論が有効になります
   components: {
-    HelloWorld
+    View
   }
-});
+})
 </script>
 
 <style>

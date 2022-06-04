@@ -1,24 +1,7 @@
 # ts-place
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 学んだこと
+- vue3でのtypescriptではcompostion APIで対応するらしい
+- つまりvue-property-decoratorではないのではという説あり
+[参考記事](https://qiita.com/azukiazusa/items/1a7e5849a04c22951e97)
+[参考ドキュメント](https://v3.ja.vuejs.org/guide/typescript-support.htm)
