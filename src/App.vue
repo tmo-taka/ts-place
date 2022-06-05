@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
     <div>あああ</div>
+    <button @click="changeFlag(true)">{{flag}}</button>
   </div>
 </template>
 
@@ -22,8 +23,15 @@ export default defineComponent({
           test: "これはテスト",
           flag: true,
           judge: '02',
-        } as define
+        } as define,
+        flag: <boolean>false,
     };
+  },
+  methods: {
+    changeFlag(judge: boolean): boolean{
+      this.flag = judge
+      return judge
+    }
   }
 })
 </script>
