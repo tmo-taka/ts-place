@@ -4,11 +4,12 @@
     <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
     <div>あああ</div>
     <button @click="changeFlag(true)">{{flag}}</button>
+    <div>{{state.msg}}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, reactive } from 'vue';
 import View from './components/View.vue';
 import { define } from '@/types/define';
 
@@ -16,6 +17,14 @@ export default defineComponent({
   // 型推論が有効になります
   components: {
     View
+  },
+  setup() {
+    const state = reactive({
+      msg: 'Hello TypeScript',
+    });
+    return {
+      state,
+    };
   },
   data(){
     return {
