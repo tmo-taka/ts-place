@@ -1,10 +1,15 @@
+
+<script setup lang="ts">
+  const msg = 'Hello TypeScript'
+</script>
+
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png">
     <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
     <div>あああ</div>
     <button @click="changeFlag(true)">{{flag}}</button>
-    <div>{{state.msg}}</div>
+    <div>{{msg}}</div>
   </div>
 </template>
 
@@ -17,14 +22,6 @@ export default defineComponent({
   // 型推論が有効になります
   components: {
     View
-  },
-  setup() {
-    const state = reactive({
-      msg: 'Hello TypeScript',
-    });
-    return {
-      state,
-    };
   },
   data(){
     return {
