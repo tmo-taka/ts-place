@@ -1,6 +1,22 @@
 
 <script setup lang="ts">
-  const msg = 'Hello TypeScript'
+  let msg = ref<string>('Hello TypeScript');
+  const changeMsg = '変わったべ';
+
+  interface State {
+    inputValue: string;
+  }
+
+  let {inputValue} = toRefs(reactive<State>({
+    inputValue: '',
+  }))
+  let inputValue2 = ref('テスト')
+
+  const changeMessage = () => {
+    console.log(9);
+    //valueに上書きしないとデータは変更されない
+    msg.value = changeMsg
+  }
 </script>
 
 <template>
@@ -9,12 +25,17 @@
     <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
     <div>あああ</div>
     <button @click="changeFlag(true)">{{flag}}</button>
+    <input type="text" v-model="inputValue">
     <div>{{msg}}</div>
+    <div>入力されたもの:{{inputValue}}</div>
+    <input type="text" v-model="inputValue2">
+    <div>入力されたもの:{{inputValue2}}</div>
+    <button @click="changeMessage()">文言帰る</button>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue';
+import { defineComponent, reactive, toRefs, ref } from 'vue';
 import View from './components/View.vue';
 import { define } from '@/types/define';
 
