@@ -1,20 +1,32 @@
 <script setup lang="ts">
-import { defineProps, PropType  } from 'vue';
+import Export from './Export.vue';
+import { defineExpose, PropType  } from 'vue';
 import { define } from '@/types/define';
 
   // 型推論が有効になります
-const props = defineProps({
-    msg: String,
-    obj : Object as PropType<define>
+interface Props {
+    msg?: PropType<String>,
+    obj : PropType<define>
+}
+
+const props = withDefaults(defineProps<Props>(),{
+  // なんでこれでないといけないのかがわからない？
+  msg: () => 'これがデフォルト値か>',
 })
 
 const testValue = props.msg
+const test = "テスト";
+
+defineExpose({test})
 </script>
 
 <template>
-  <div>{{msg}}</div>
-  <div>{{obj.test}}</div>
-  <div>これがProps代入：{{testValue}}</div>
+  <div>
+    <div>{{msg}}</div>
+    <div>{{obj.test}}</div>
+    <div>これがProps代入：{{testValue}}</div>
+    <Export />
+  </div>
 </template>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

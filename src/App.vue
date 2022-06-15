@@ -17,12 +17,17 @@
     //valueに上書きしないとデータは変更されない
     msg.value = changeMsg
   }
+
+  const childRef = ref();
+  onMounted(() => {
+    console.log(childRef.value);
+  });
 </script>
 
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png">
-    <View msg="Welcome to Your Vue.js + TypeScript App" :obj="obj"/>
+    <View :obj="obj"/>
     <div>あああ</div>
     <button @click="changeFlag(true)">{{flag}}</button>
     <input type="text" v-model="inputValue">
@@ -31,11 +36,12 @@
     <input type="text" v-model="inputValue2">
     <div>入力されたもの:{{inputValue2}}</div>
     <button @click="changeMessage()">文言帰る</button>
+    <div>testValueの値{{childRef}}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, toRefs, ref } from 'vue';
+import { defineComponent, reactive, toRefs, ref, onMounted  } from 'vue';
 import View from './components/View.vue';
 import { define } from '@/types/define';
 
