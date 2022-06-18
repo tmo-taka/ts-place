@@ -14,6 +14,30 @@ const props = withDefaults(defineProps<Props>(),{
   msg: () => 'これがデフォルト値か>',
 })
 
+class MemberList{
+
+  lists: array;
+
+  constructor(lists:array) {
+    this.lists = lists
+  }
+  lookHeight(): void {
+    console.log(this.lists[0].height)
+  }
+  lookWeight() :void {
+    console.log('体重')
+    console.log(this.lists[0].weight)
+  }
+}
+
+const memberList = new MemberList(
+  [
+    {name: 'yuki', height: '167cm', weight: '58kg'},
+    {name: 'kota', height: '172cm', weight: '68kg'},
+    {name: 'tetsu', height: '153cm', weight: '45kg'},
+  ]
+)
+
 const testValue = props.msg
 const test = "テスト";
 
@@ -25,6 +49,7 @@ defineExpose({test})
     <div>{{msg}}</div>
     <div>{{obj.test}}</div>
     <div>これがProps代入：{{testValue}}</div>
+    <button @click="memberList.lookWeight()">体重を見る</button>
     <Export />
   </div>
 </template>
