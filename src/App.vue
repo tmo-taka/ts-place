@@ -43,7 +43,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, ref, onMounted  } from 'vue';
 import View from './components/View.vue';
-import { define } from '@/types/define';
+import { Define } from '@/types/define';
 
 export default defineComponent({
   // 型推論が有効になります
@@ -56,7 +56,7 @@ export default defineComponent({
           test: "これはテスト",
           flag: true,
           judge: '02',
-        } as define,
+        } as Define,
         flag: <boolean>false,
     };
   },

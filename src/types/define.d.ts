@@ -1,6 +1,6 @@
 type judgeKey = '00' | '01' | '02';
 
-export interface define{
+export interface Define{
     test: string,
     flag: boolean,
     judge: judgeKey

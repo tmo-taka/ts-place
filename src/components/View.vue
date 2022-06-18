@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import Export from './Export.vue';
 import { defineExpose, PropType  } from 'vue';
-import { define } from '@/types/define';
+import { Define } from '@/types/define';
 
   // 型推論が有効になります
 interface Props {
     msg?: PropType<String>,
-    obj : PropType<define>
+    obj:  PropType<Define>,
 }
 
 const props = withDefaults(defineProps<Props>(),{
