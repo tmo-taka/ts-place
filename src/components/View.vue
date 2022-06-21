@@ -14,11 +14,17 @@ const props = withDefaults(defineProps<Props>(),{
   msg: () => 'これがデフォルト値か>',
 })
 
+type Obj = {
+    name: string,
+    weight: string,
+    height: string,
+}
+
 class MemberList{
 
-  lists: array;
+  lists: Array<Obj>;
 
-  constructor(lists:array) {
+  constructor(lists:Array<Obj>) {
     this.lists = lists
   }
   lookHeight(): void {
