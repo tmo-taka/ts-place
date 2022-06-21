@@ -22,11 +22,14 @@ class MemberList{
     this.lists = lists
   }
   lookHeight(): void {
-    console.log(this.lists[0].height)
+    for(let obj of this.lists){
+      console.log(obj.name + ':' + obj.height)
+    }
   }
   lookWeight() :void {
-    console.log('体重')
-    console.log(this.lists[0].weight)
+    for(let obj of this.lists){
+      console.log(obj.name + ':' + obj.weight)
+    }
   }
 }
 
